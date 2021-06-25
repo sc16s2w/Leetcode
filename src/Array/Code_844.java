@@ -8,10 +8,10 @@ public class Code_844 {
     public boolean backspaceCompare(String s, String t) {
         int fast = 0;
         int slow = 0;
-        for(fast = 0; fast<s.length();fast++){
-            if(s.toCharArray()[fast]=='#'){
-                s.toCharArray()[fast] = s.toCharArray()[fast-1];
-            }
+        for(int i=0;i<s.length();i++){
+            char ch = s.charAt(i);
+            if(ch != '#')
+
         }
     }
 }
