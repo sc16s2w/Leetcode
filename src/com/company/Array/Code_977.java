@@ -23,4 +23,7 @@ public class Code_977 {
         }
         return result;
     }
+    public static void main(String[] args){
+        System.out.println(Integer.valueOf((int) 1.9));
+    }
 }
