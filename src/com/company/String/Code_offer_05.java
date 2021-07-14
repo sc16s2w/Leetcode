@@ -29,5 +29,16 @@ public class Code_offer_05 {
         return String.valueOf(result);
     }
 
-    public static String replaceSpace_2nd(String s)
+    public static String replaceSpace_2nd(String s){
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0;i<s.length();i++){
+            if((String.valueOf(s.charAt(i))).equals(" ")){
+                sb.append("%20");
+            }
+            else{
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
 }
