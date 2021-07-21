@@ -19,10 +19,4 @@ public class Code_27 {
         return slow;
     }
 
-    public static void main(String[] args){
-        System.out.println(removeElement(new int[]{1,3,4,5},3));
-
-    }
-
-
 }

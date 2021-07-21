@@ -7,7 +7,7 @@ import java.util.Queue;
 // Definition for a Node.
 
 public class Code_429 {
-    class Node {
+    private class Node {
         public int val;
         public List<com.company.BinaryTree.Node> children;
 
