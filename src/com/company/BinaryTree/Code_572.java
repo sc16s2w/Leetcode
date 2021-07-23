@@ -6,6 +6,7 @@ import java.util.Queue;
 import java.util.Stack;
 
 public class Code_572 {
+    //实在改不来最后的了
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         Queue<TreeNode> store = new LinkedList<>();
         List<Integer> cur_store;
@@ -45,5 +46,17 @@ public class Code_572 {
         preorder(cur.left,store);
         preorder(cur.right,store);
 
+    }
+    public boolean isSubtree_2nd(TreeNode root, TreeNode subRoot){
+        if(subRoot == null) return true;
+        if(root == null) return false;
+        return isSame(root.left,subRoot)||isSame(root.right,subRoot)||isSame(root,subRoot);
+    }
+    public boolean isSame(TreeNode left,TreeNode right){
+        if(left == null && right != null) return false;
+        if(left != null && right == null) return false;
+        if(left == null && right == null) return true;
+        if(left.val!=right.val) return false;
+        return isSame(left.left, right.left)&&isSame(left.right,right.right);
     }
 }
