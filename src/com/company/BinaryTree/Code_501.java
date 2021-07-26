@@ -42,4 +42,39 @@ public class Code_501 {
         else store.put(cur.val,1);
         inorder(cur.right);
     }
+    //利用中序遍历然后直接找
+    TreeNode pre;
+    int count;
+    int maxcount = 0;
+    List<Integer> res =  new ArrayList<>();
+    public int[] findMode_2nd(TreeNode root) {
+        findMore(root);
+        int[] result = new int[res.size()];
+        for(int i = 0;i<res.size();i++){
+            result[i] = res.get(i);
+        }
+        return result;
+
+    }
+
+    public void findMore(TreeNode cur){
+        if(cur == null) return;
+        findMore(cur.left);
+        if(pre ==null||pre.val!=cur.val){
+            count = 1;
+        }
+        else{
+            count++;
+        }
+        if(maxcount<count){
+            res.clear();
+            res.add(cur.val);
+            maxcount = count;
+        }
+        else if(count == maxcount){
+            res.add(cur.val);
+        }
+        pre = cur;
+        findMore(cur.right);
+    }
 }
