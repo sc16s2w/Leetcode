@@ -24,7 +24,7 @@ public class Code_22 {
     }
     public void retrace(char[] ch,int start){
         if(sb.length() == ch.length){
-            if(isValid(sb.toString()){
+            if(isValid(sb.toString())){
                 result.add(sb.toString());
             }
             return;
