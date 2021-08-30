@@ -5,8 +5,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args){
-        int[] input = new int[]{-2,1,-3,4,-1,2,1,-5,4};
-        System.out.println(maxSubArray(input).toString());
+        int[] input = new int[]{2,3,4,5};
+        System.out.println(maxLength(input));
 
     }
     public static List<String> splitString(List<String> list){
@@ -54,5 +54,30 @@ public class Main {
         System.out.println(store.get(result).toString());
         return store.get(result);
 
+    }
+    public static int maxLength (int[] arr) {
+        // write code here
+        List<Integer> result = new ArrayList<>();
+        int i = 0;
+        int j =1;
+        while(i<arr.length&&j<arr.length){
+            System.out.println(i+" "+j);
+            if(arr[i]!=arr[j]){
+                if(arr[j]!=arr[j-1]){
+                    j++;
+                }
+                else{
+                    result.add(j-i-1);
+                    i++;
+                }
+            }
+            else{
+                result.add(j-i);
+                i++;
+                j++;
+            }
+        }
+        if(result.size()<1) return arr.length;
+        return Collections.max(result);
     }
 }

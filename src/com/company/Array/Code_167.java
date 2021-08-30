@@ -1,5 +1,10 @@
 package com.company.Array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 给定一个已按照 升序排列 的整数数组numbers ，请你从数组中找出两个数满足相加之和等于目标数target 。
  * 函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 <= answer[0] < answer[1] <= numbers.length 。
@@ -25,5 +30,26 @@ public class Code_167 {
             }
         }
         return result;
+    }
+    public int TwoSum (int[] L, int K) {
+        // write code here
+        Arrays.sort(L);
+        int i = 0;
+        int j = L.length-1;
+        List<Integer> store = new ArrayList<>();
+        int result = -1;
+        while(i<=j){
+            int sum = L[i]+L[j];
+            if(sum>=K){
+                j--;
+            }
+            else if(sum<K){
+                result = Math.max(result,sum);
+                i++;
+            }
+        }
+        return result;
+
+
     }
 }
