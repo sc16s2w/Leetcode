@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Code_382 {
+    /**
+     * 随机概率随机取样
+     */
     List<Integer> store = new ArrayList<>();
     public Code_382(ListNode head) {
         while(head!=null){
